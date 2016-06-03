@@ -4,12 +4,15 @@
 	<tr>
 		<th style="border: 1px solid #000;">Title</th>
 		<th style="border: 1px solid #000;">Text</th>
+     <th colspan="2"></th>
 	</tr>
 
 	<% @articles.each do |article| %>
 	<tr style="border: 1px solid #efefef;">
 		<td style="text-align: center; border: 1px solid #000;padding: 10px;"><%= article.title %></td>
 		<td style="text-align: center; border: 1px solid #000;padding: 10px;"><%= article.text %></td>
+    <td><%= link_to 'Show', article_path(article) %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
 	</tr>
 	<% end %>
 </table>
