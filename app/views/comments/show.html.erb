@@ -1,29 +1,15 @@
 <p>
-  <strong>Title:</strong>
-  <%= @article.title %>
+	<strong>Title:</strong>
+	<%= @article.title %>
 </p>
- 
+
 <p>
-  <strong>Text:</strong>
-  <%= @article.text %>
+	<strong>Text:</strong>
+	<%= @article.text %>
 </p>
 
-</br>
-
-<h2>Comments</h2>
-<% @article.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
- 
 <h2>Add a comment:</h2>
+
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
     <%= f.label :commenter %><br>
